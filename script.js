@@ -1,3 +1,77 @@
+function showModal(title, message) {
+  const modal = document.getElementById('custom-alert');
+  const modalTitle = document.getElementById('modal-title');
+  const modalMessage = document.getElementById('modal-message');
+  const okBtn = document.getElementById('modal-ok-btn');
+
+  modalTitle.textContent = title;
+  modalMessage.textContent = message;
+
+  modal.style.display = 'flex';
+
+  disablePageInteraction(true);
+
+  function closeModal(){
+    modal.style.display = 'none';
+    disablePageInteraction(false);
+  }
+
+  document.addEventListener('keydown', apertarEnter);
+
+  function apertarEnter(event){
+    if (event.key === 'Enter'){
+      closeModal();
+    }
+  };
+
+  okBtn.onclick = function() {
+    closeModal();
+  };
+
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      closeModal()
+    }
+  };
+
+};
+
+function disablePageInteraction(disable) {
+  const elements = document.querySelectorAll('input, select, textarea');
+  
+  elements.forEach(function(element) {
+      element.disabled = disable;
+      element.setAttribute('tabindex', disable ? '-1' : '0'); 
+  });
+}
+
+function nafModal(){
+  showModal('Campo bloqueado', 'Simule sua nota para liberar o campo NAF');
+}
+
+document.querySelectorAll('.nota').forEach(function(input) {
+  input.addEventListener('input', function() {
+    
+    let value = this.value;
+
+    if (value.length > 4) {
+        this.value = value.slice(0, 4);
+    }
+
+    value = parseFloat(this.value.replace(',', '.'));
+
+    if (value < 0) {
+        this.value = null;
+        showModal('Nota inválida', 'A nota mínima é 0.');
+    } 
+    else if (value > 10) {
+        this.value = null;
+        showModal('Nota inválida', 'A nota máxima é 10.');
+    }
+
+  });
+});
+
 const calcularMedia = () => {
   const PP = document.getElementById('PP');
   const AD = document.getElementById('AD');
@@ -77,7 +151,7 @@ const calcularMedia = () => {
     const naf = nafInput.value.trim() !== '' ? parseFloat(nafInput.value) : 0;
 
     if (nafInput.value.trim() !== '') {
-      const MPT = validMP + (naf / 2);
+      const MPT = (validMP + naf) / 2;
       const validMPT = Math.max(0, Math.min(10, MPT));
       mediaF.value = validMPT.toFixed(2);
 
