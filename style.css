@@ -61,6 +61,7 @@ h1, h2, h3, h4, h5, h6 {
     font: italic bold 3.5vw 'Roboto', sans-serif;
     margin-bottom: 2vh;
     text-shadow: -0.4vh 0.3vh 0 #27acb8, -1.1vh 0.3vh 0 #0a0e2785;
+    font-size: 6.5vh;
 }
 
 .textsTutorial{
@@ -81,6 +82,10 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     padding: 2vw 5vw 0 5vw;
     align-items: center;
+}
+
+#sec1 p{
+    font-size: 2vh;
 }
 
 #sec2{
@@ -141,6 +146,7 @@ h1, h2, h3, h4, h5, h6 {
     gap: 0.5vh;
     justify-content: space-between;
     height: 70%;
+    text-align: center;
 }
 
 .avaliacoes, .campos, .pesos, .repMedia p{
@@ -268,6 +274,10 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #919191;
     pointer-events: none;
     width: 100%;
+}
+
+.naf h1{
+    font-size: 3vh;
 }
 
 #pNaf{
