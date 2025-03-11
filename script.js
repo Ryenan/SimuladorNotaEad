@@ -134,6 +134,8 @@ const calcularMedia = () => {
     sadFeijao.style.display = 'none';
 
     nafInput.value = '';
+    mediaF.value = validMP.toFixed(2);
+
   } else if (validMP >= 3) {
     blockText.textContent = 'Você precisará fazer NAF para obter a média mínima.';
 

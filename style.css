@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -11,7 +10,7 @@
 body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    background-color: rgb(248, 231, 231);
+    background-color: rgb(255, 255, 255);
 }
 
 img, picture, video, canvas, svg {
@@ -50,25 +49,30 @@ h1, h2, h3, h4, h5, h6 {
     text-wrap: balance;
 }
 
+.lineHeader{
+    width: 100%;
+    height: 2vh;
+    background: linear-gradient(#4a96d8, #032365);
+}
+
 .titulo{
     display: flex;    
-    justify-content: center;
     margin: 0;
     width: 100%;
-    text-align: center;
     position: relative;
-    color: #e0eff2;
-    font: italic bold 3.5vw 'Roboto', sans-serif;
+    color: #0dacf1;
+    font: bold 3.5vw 'Montserrat', sans-serif;
     margin-bottom: 2vh;
-    text-shadow: -0.4vh 0.3vh 0 #27acb8, -1.1vh 0.3vh 0 #0a0e2785;
     font-size: 6.5vh;
 }
 
 .textsTutorial{
     display: flex;
     flex-direction: column;
-    font-size: 1vw;
-    line-height: 2rem;
+    font-size: 1.2vw;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    line-height: 1.3rem;
     gap: 2vh;
 }
 
@@ -84,12 +88,16 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
 }
 
+#sec1{
+    flex-direction: column;
+}
+
 #sec1 p{
     font-size: 2vh;
 }
 
 #sec2{
-    padding: 2vw 10vw 0 10vw;
+    padding: 2vw 4vw 0 4vw;
 }
 
 #sec3{
@@ -115,6 +123,8 @@ h1, h2, h3, h4, h5, h6 {
 .table{
     padding: 0 2vw 0 2vw;
     gap: 2%;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(2, 106, 151, 0.692) 0px 2px 16px 0px;
+    border-radius: 5vh;
 }
 
 .headerTabel{
@@ -136,6 +146,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .campos input{
     width: 50%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 
 .avaliacoes, .campos, .pesos, .repMedia{
@@ -147,16 +158,22 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: space-between;
     height: 70%;
     text-align: center;
+    padding-right: 2vw;
 }
 
 .avaliacoes, .campos, .pesos, .repMedia p{
     font-size: 2vh;
 }
 
+.avaliacoes p, .pesos p, .campos p, .repMedia p{
+    font-weight: bold;
+}
+
 .titleColumn{
     font-family: 'Inter';
-    font-size: 2vh;
+    font-size: 1.2vw;
     text-align: center; 
+    color: rgb(17 130 246)
 }
 
 .valores{
@@ -184,6 +201,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
     font-size: 3vh;
     text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 
 #mediaF{
@@ -192,6 +210,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
     font-size: 7vh;
     text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 
 #textMediaF{
@@ -211,14 +230,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .divLine{
-    background-color: whitesmoke;
     width: 100%;
 }
 
 .line{
     width: 60%;
     height: 5vh;
-    border-bottom: solid 2px #304296;
     margin: 0 auto;
     text-align: center;
 }
@@ -237,11 +254,15 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     flex-direction: column;
     height: 38vh;
-    width: 100%;
+    width: 20%;
+    margin: auto;
     align-items: center;
     text-align: center;
     background-color: whitesmoke;
     padding: 2vh;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 1px 2px 0px, rgba(2, 106, 151, 0.692) 0px 1px 8px 0px;
+    border-radius: 5vh;
+    margin-top: 2vh;
 }
 
 .resultadoField h1{
@@ -324,11 +345,12 @@ h1, h2, h3, h4, h5, h6 {
 
 #modal-ok-btn {
     padding: 10px 20px;
-    background-color: #304296;
+    background-color: #4a96d8;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: ease-in-out all 0.2s;
 }
 
 #modal-ok-btn:hover {
